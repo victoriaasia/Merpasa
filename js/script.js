@@ -16,7 +16,7 @@ $(document).ready(function() {
   });
 
   $(".footer").load("footer.html");
-  
+
   // $('#changeColor').hover(function () {
   var colors = ["#a71b3b", "#a6781a", "#1ba768", "#1a48a6"];
   var rand = Math.floor(Math.random() * colors.length);
@@ -28,8 +28,8 @@ $(document).ready(function() {
 $(window).bind('popstate', function() {
   $.ajax({
     url: location.pathname + '?ajax=1',
-    success: function(data) {
-      $('#content').html(data);
+    success: function(html) {    
+      window.location.replace("index.html");
     }
   });
   $('.flip').removeClass('selected');
